@@ -1,3 +1,5 @@
+import 'package:binance_clone/components/constants.dart';
+import 'package:binance_clone/components/size_config.dart';
 import 'package:binance_clone/features/screens/splash/components/body.dart';
 import 'package:flutter/material.dart';
 
@@ -6,9 +8,11 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: const Body(),
+    // Для инициализации адаптивки
+    SizeConfig().init(context);
+    return const Scaffold(
+      backgroundColor: primaryLightColor,
+      body: Body(),
     );
   }
 }
