@@ -19,12 +19,12 @@ InputDecorationTheme inputDecorationTheme() {
     ),
     enabledBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(28),
-      borderSide: const BorderSide(color: textColor),
+      borderSide: const BorderSide(color: textDarkColor),
       gapPadding: 10,
     ),
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(28),
-      borderSide: const BorderSide(color: textColor),
+      borderSide: const BorderSide(color: textDarkColor),
       gapPadding: 10,
     ),
   );
@@ -32,8 +32,8 @@ InputDecorationTheme inputDecorationTheme() {
 
 TextTheme textTheme() {
   return const TextTheme(
-    bodyLarge: TextStyle(color: textColor),
-    bodySmall: TextStyle(color: textColor),
+    bodyLarge: TextStyle(color: textDarkColor),
+    bodySmall: TextStyle(color: textDarkColor),
   );
 }
 
