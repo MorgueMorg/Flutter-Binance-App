@@ -13,11 +13,12 @@ class MarketsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: primaryDarkColor,
       appBar: AppBar(
-          backgroundColor: primaryDarkColor,
-          toolbarHeight: getProportionateScreenHeight(20),
-          centerTitle: true,
-          iconTheme: const IconThemeData(color: primaryLightColor),
-          automaticallyImplyLeading: false),
+        backgroundColor: primaryDarkColor,
+        toolbarHeight: getProportionateScreenHeight(20),
+        centerTitle: true,
+        iconTheme: const IconThemeData(color: primaryLightColor),
+        automaticallyImplyLeading: false,
+      ),
       body: const Body(),
       bottomNavigationBar: const CustomBottomNavBar(
         selectedMenu: MenuState.markets,
