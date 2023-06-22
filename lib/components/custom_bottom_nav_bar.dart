@@ -1,5 +1,6 @@
 import 'package:binance_clone/components/constants.dart';
 import 'package:binance_clone/components/menu_enums.dart';
+import 'package:binance_clone/components/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
@@ -35,6 +36,8 @@ class CustomBottomNavBar extends StatelessWidget {
                 context.go('/markets');
               },
               icon: SvgPicture.asset("assets/icons/chart.svg",
+                  height: getProportionateScreenWidth(22),
+                  width: getProportionateScreenWidth(22),
                   // ignore: deprecated_member_use
                   color: MenuState.markets == selectedMenu
                       ? secondaryDarkColor
@@ -45,6 +48,8 @@ class CustomBottomNavBar extends StatelessWidget {
                 context.go('/trade');
               },
               icon: SvgPicture.asset("assets/icons/trade.svg",
+                  height: getProportionateScreenWidth(22),
+                  width: getProportionateScreenWidth(22),
                   // ignore: deprecated_member_use
                   color: MenuState.trade == selectedMenu
                       ? secondaryDarkColor
@@ -55,6 +60,8 @@ class CustomBottomNavBar extends StatelessWidget {
                 context.go('/wallets');
               },
               icon: SvgPicture.asset("assets/icons/wallets.svg",
+                  height: getProportionateScreenWidth(22),
+                  width: getProportionateScreenWidth(22),
                   // ignore: deprecated_member_use
                   color: MenuState.wallets == selectedMenu
                       ? secondaryDarkColor
