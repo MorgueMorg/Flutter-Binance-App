@@ -1,7 +1,7 @@
 import 'package:binance_clone/components/custom_tap_bar.dart';
 import 'package:binance_clone/features/screens/markets/components/crypto_list/crypto_list_screen.dart';
-import 'package:binance_clone/features/screens/markets/widgets/bottom_tapbar.dart';
-import 'package:binance_clone/features/screens/markets/widgets/search_field.dart';
+import 'package:binance_clone/features/screens/markets/components/widgets/bottom_tapbar.dart';
+import 'package:binance_clone/features/screens/markets/components/widgets/search_field.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -9,15 +9,13 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
-      child: Column(
-        children: [
-          SearchBarWidget(),
-          CustomTapBar(),
-          BottomTapBar(),
-          CryptoListScreen(),
-        ],
-      ),
+    return const Column(
+      children: [
+        SearchBarWidget(),
+        CustomTapBar(),
+        BottomTapBar(),
+        CryptoListScreen(),
+      ],
     );
   }
 }

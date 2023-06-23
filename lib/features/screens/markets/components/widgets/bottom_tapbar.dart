@@ -33,9 +33,6 @@ class BottomTapBar extends StatelessWidget {
                     fontWeight: FontWeight.w400,
                   ),
                 ),
-                const SizedBox(
-                  width: 4.0,
-                ),
                 Icon(
                   Icons.keyboard_double_arrow_up_sharp,
                   color: Colors.grey.shade400,
@@ -56,9 +53,6 @@ class BottomTapBar extends StatelessWidget {
                     color: Colors.grey.shade400,
                     fontWeight: FontWeight.w400,
                   ),
-                ),
-                const SizedBox(
-                  width: 4.0,
                 ),
                 Icon(
                   Icons.keyboard_double_arrow_down_sharp,
