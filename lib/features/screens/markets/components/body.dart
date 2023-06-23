@@ -1,7 +1,7 @@
 import 'package:binance_clone/components/custom_tap_bar.dart';
-import 'package:binance_clone/features/screens/markets/components/bottom_tapbar.dart';
-import 'package:binance_clone/features/screens/markets/components/crypto_list.dart';
-import 'package:binance_clone/features/screens/markets/components/search_field.dart';
+import 'package:binance_clone/features/screens/markets/components/crypto_list/crypto_list_screen.dart';
+import 'package:binance_clone/features/screens/markets/widgets/bottom_tapbar.dart';
+import 'package:binance_clone/features/screens/markets/widgets/search_field.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -15,7 +15,7 @@ class Body extends StatelessWidget {
           SearchBarWidget(),
           CustomTapBar(),
           BottomTapBar(),
-          CryptoList(),
+          CryptoListScreen(),
         ],
       ),
     );

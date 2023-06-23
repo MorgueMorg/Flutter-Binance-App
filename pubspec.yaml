@@ -15,6 +15,14 @@ dependencies:
   go_router: ^8.1.0
   # Для svg файлов
   flutter_svg: ^2.0.7
+  # Для работы с сетью и запросами
+  dio: ^5.2.1+1
+  # Стейт менеджер
+  flutter_bloc: ^8.1.3
+  # Для сравнивания состояний
+  equatable: ^2.0.5
+  # Для иньекции зависимостей
+  get_it: ^7.4.1
 
 dev_dependencies:
   flutter_test:
