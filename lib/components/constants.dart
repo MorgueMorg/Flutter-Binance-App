@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 // Цветовая палитра
 const primaryDarkColor = Color(0xFF0B0E11);
 const primaryLightColor = Color(0xFF1E2329);
+const additionalLightColor = Color(0xFF262930);
 const secondaryDarkColor = Color(0xFFF0B90B);
 const secondaryLightColor = Color(0xFFFCD535);
 const textDarkColor = Color(0xFFFAFAFA);

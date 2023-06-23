@@ -1,4 +1,4 @@
-import 'package:binance_clone/features/screens/markets/components/custom_tap_bar.dart';
+import 'package:binance_clone/components/custom_tap_bar.dart';
 import 'package:binance_clone/features/screens/markets/components/search_field.dart';
 import 'package:flutter/material.dart';
 

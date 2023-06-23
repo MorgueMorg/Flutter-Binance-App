@@ -15,8 +15,6 @@ class MarketsScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: primaryDarkColor,
         toolbarHeight: getProportionateScreenHeight(20),
-        centerTitle: true,
-        iconTheme: const IconThemeData(color: primaryLightColor),
         automaticallyImplyLeading: false,
       ),
       body: const Body(),

@@ -1,3 +1,4 @@
+import 'package:binance_clone/components/custom_tap_bar.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -5,8 +6,10 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text("Wallets"),
+    return const Column(
+      children: [
+        CustomTapBar(),
+      ],
     );
   }
 }
