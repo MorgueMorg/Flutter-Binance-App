@@ -1,10 +1,17 @@
 import 'package:binance_clone/components/constants.dart';
 import 'package:binance_clone/components/size_config.dart';
+import 'package:binance_clone/router/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class CustomTapBar extends StatefulWidget {
-  const CustomTapBar({super.key});
+  final int currentIndex;
+  final void Function(int index) onChangedTab;
+
+  const CustomTapBar({
+    Key? key,
+    required this.currentIndex,
+    required this.onChangedTab,
+  }) : super(key: key);
 
   @override
   State<CustomTapBar> createState() => CustomTapBarState();
@@ -19,19 +26,36 @@ class CustomTapBarState extends State<CustomTapBar>
     super.initState();
     tabController = TabController(
       length: 5,
-      initialIndex: 0,
+      initialIndex: widget.currentIndex,
       vsync: this,
     );
+    tabController.addListener(_handleTabSelection);
+  }
+
+  @override
+  void dispose() {
+    tabController.removeListener(_handleTabSelection);
+    tabController.dispose();
+    super.dispose();
+  }
+
+  void _handleTabSelection() {
+    if (!tabController.indexIsChanging) {
+      // Изменение индекса для навигации по tapbar'у
+      widget.onChangedTab(tabController.index);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return TabBar(
       onTap: (index) {
+        tabController.animateTo(index);
+        // ! Для навигации по tapbar'у
         if (index == 0) {
-          context.go('/markets');
+          router.go('/markets');
         } else if (index == 1) {
-          context.go("/wallets");
+          router.go('/wallets');
         }
       },
       isScrollable: true,
@@ -42,8 +66,6 @@ class CustomTapBarState extends State<CustomTapBar>
       indicatorSize: TabBarIndicatorSize.tab,
       indicatorWeight: 1.75,
       indicatorPadding: const EdgeInsets.symmetric(horizontal: 28.0),
-      // indicatorPadding:
-      //     EdgeInsets.symmetric(horizontal: 28.0 - (selectedTabIndex * 28.0)),
       labelStyle: TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: SizeConfig.screenWidth / 28.0,
