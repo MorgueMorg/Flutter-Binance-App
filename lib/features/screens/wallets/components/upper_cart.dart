@@ -50,10 +50,10 @@ class UpperCart extends StatelessWidget {
                               child: Text("USDT"),
                             ),
                             PopupMenuItem(
-                              child: Text("About"),
+                              child: Text("USD"),
                             ),
                             PopupMenuItem(
-                              child: Text("Contact"),
+                              child: Text("ETH"),
                             )
                           ];
                         },
@@ -116,10 +116,13 @@ class UpperCart extends StatelessWidget {
                     height: getProportionateScreenHeight(35),
                     width: getProportionateScreenHeight(125),
                     decoration: const BoxDecoration(
-                        color: Colors.amber,
+                        color: secondaryDarkColor,
                         borderRadius: BorderRadius.all(Radius.circular(10))),
                     child: const Center(
-                      child: Text("Deposit"),
+                      child: Text(
+                        "Deposit",
+                        style: TextStyle(fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                   SizedBox(height: getProportionateScreenHeight(10)),

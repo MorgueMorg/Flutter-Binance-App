@@ -1,6 +1,6 @@
 import 'package:binance_clone/components/custom_tap_bar.dart';
 import 'package:binance_clone/components/size_config.dart';
-import 'package:binance_clone/features/screens/wallets/components/upper_cart.dart';
+import 'package:binance_clone/features/screens/wallets/components/balance_list.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {
@@ -14,7 +14,7 @@ class Body extends StatelessWidget {
         SizedBox(
           height: getProportionateScreenHeight(15),
         ),
-        const UpperCart(),
+        const BalanceList(),
       ],
     );
   }
