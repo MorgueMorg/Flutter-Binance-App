@@ -61,10 +61,10 @@ class CustomTapBarState extends State<CustomTapBar>
       isScrollable: true,
       controller: tabController,
       labelColor: textLightColor,
-      indicatorColor: const Color(0xFFFFD500),
+      indicatorColor: secondaryDarkColor,
       unselectedLabelColor: Colors.grey,
       indicatorSize: TabBarIndicatorSize.tab,
-      indicatorWeight: 1.75,
+      indicatorWeight: 2.5,
       indicatorPadding: const EdgeInsets.symmetric(horizontal: 28.0),
       labelStyle: TextStyle(
         fontWeight: FontWeight.w500,

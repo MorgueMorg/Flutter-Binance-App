@@ -1,3 +1,4 @@
+import 'package:binance_clone/components/constants.dart';
 import 'package:binance_clone/components/size_config.dart';
 import 'package:binance_clone/repositories/models/crypto_coin.dart';
 import 'package:flutter/material.dart';
@@ -60,14 +61,28 @@ class MarketsCoinTile extends StatelessWidget {
             ),
             Expanded(
               flex: 1,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-                    '${coin.priceInUSD} \$'.substring(0, 5),
+                    '${coin.high24Hours}'.length > 8
+                        ? '${coin.priceInUSD}'.substring(0, 5)
+                        : '${coin.priceInUSD}',
                     style: TextStyle(
-                      fontSize: SizeConfig.screenWidth / 28.0,
-                      color: Colors.grey.shade300,
+                      fontSize: SizeConfig.screenWidth / 25.0,
+                      color: greenLightColor,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(height: getProportionateScreenHeight(5)),
+                  Text(
+                    '\$${coin.high24Hours}'.length > 8
+                        ? '\$${coin.priceInUSD}'.substring(0, 5)
+                        : '\$${coin.priceInUSD}',
+                    style: TextStyle(
+                      fontSize: SizeConfig.screenWidth / 30.0,
+                      // color: Colors.grey.shade300,
+                      color: Colors.grey.shade400,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -76,27 +91,24 @@ class MarketsCoinTile extends StatelessWidget {
             ),
             Expanded(
               flex: 1,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Container(
-                    padding: const EdgeInsets.fromLTRB(16.0, 12.0, 8.0, 12.0),
-                    decoration: BoxDecoration(
-                      color: const Color(0xFF00FF80).withOpacity(.15),
-                      borderRadius: BorderRadius.circular(4.0),
-                    ),
-                    child: Text(
-                      // ! Просто для красоты и валидации
-                      "+${coin.high24Hours}".substring(0, 5),
-                      // '+3.33%',
-                      style: TextStyle(
-                        fontSize: SizeConfig.screenWidth / 30.0,
-                        color: const Color(0xFF00FF80),
-                        fontWeight: FontWeight.w400,
-                      ),
+              child: Container(
+                padding: const EdgeInsets.fromLTRB(20.0, 12.0, 16.0, 12.0),
+                decoration: BoxDecoration(
+                  // color: const Color(0xFF00FF80).withOpacity(.15),
+                  color: greenLightColor,
+                  borderRadius: BorderRadius.circular(4.0),
+                ),
+                child: Center(
+                  child: Text(
+                    // ! Просто для красоты и валидации
+                    "${"+${coin.high24Hours}".substring(0, 2)},${"${coin.high24Hours}".substring(1, 3).replaceAll(".", "")}",
+                    style: TextStyle(
+                      fontSize: SizeConfig.screenWidth / 23.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
-                ],
+                ),
               ),
             ),
           ],

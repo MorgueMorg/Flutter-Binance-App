@@ -2,13 +2,14 @@ import 'package:binance_clone/components/size_config.dart';
 import 'package:flutter/material.dart';
 
 // Цветовая палитра
-const primaryDarkColor = Color(0xFF0B0E11);
-const primaryLightColor = Color(0xFF1E2329);
-const additionalLightColor = Color(0xFF262930);
-const secondaryDarkColor = Color(0xFFF0B90B);
-const secondaryLightColor = Color(0xFFFCD535);
-const textDarkColor = Color(0xFFFAFAFA);
-const textLightColor = Color(0xFFEAECEF);
+const Color primaryDarkColor = Color(0xFF0B0E11);
+const Color primaryLightColor = Color(0xFF1E2329);
+const Color additionalLightColor = Color(0xFF262930);
+const Color secondaryDarkColor = Color(0xFFF0B90B);
+const Color secondaryLightColor = Color(0xFFFCD535);
+const Color greenLightColor = Color(0xFF2DBD85);
+const Color textDarkColor = Color(0xFFFAFAFA);
+const Color textLightColor = Color(0xFFEAECEF);
 
 // Для анимаций
 const kAnimationDuration = Duration(milliseconds: 200);

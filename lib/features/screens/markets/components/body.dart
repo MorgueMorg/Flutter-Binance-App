@@ -12,7 +12,8 @@ class Body extends StatefulWidget {
 }
 
 class _BodyState extends State<Body> {
-  int currentIndex = 0; // ? Для того чтобы на экране "markets" индикатор был под текстом "favorites".
+  int currentIndex =
+      0; // ? Для того чтобы на экране "markets" индикатор был под текстом "favorites".
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +28,7 @@ class _BodyState extends State<Body> {
             });
           },
         ),
-        SizedBox(
-          height: getProportionateScreenHeight(15),
-        ),
+        SizedBox(height: getProportionateScreenHeight(15)),
         const CryptoListScreen(),
       ],
     );

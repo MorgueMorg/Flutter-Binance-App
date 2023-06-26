@@ -133,10 +133,20 @@ class _BalanceListState extends State<BalanceList> {
                             ),
                           );
                         }
-                        return const Center(
-                          child: CircularProgressIndicator(
-                            color: secondaryDarkColor,
-                          ),
+                        return Column(
+                          // ? Изначально тут был CircularProgressIndicator, но я захотел сделать так вот текст с небольшим пространством снизу.
+                          children: [
+                            Text(
+                              "Loading...",
+                              style: TextStyle(
+                                  color: Colors.grey.shade400,
+                                  fontSize: getProportionateScreenHeight(15),
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            SizedBox(
+                              height: getProportionateScreenHeight(15),
+                            )
+                          ],
                         );
                       },
                     ),
