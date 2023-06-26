@@ -18,6 +18,7 @@ class BalanceList extends StatefulWidget {
 }
 
 class _BalanceListState extends State<BalanceList> {
+  bool isChecked = false;
   final _cryptoListBloc = CryptoListBloc(GetIt.I<AbstractCoinsRepository>());
 
   @override
@@ -47,7 +48,56 @@ class _BalanceListState extends State<BalanceList> {
                 },
                 child: Column(
                   children: [
-                    Text("aktan"),
+                    Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              left: 15, right: 15, top: 15),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                "Balances",
+                                style: TextStyle(
+                                  fontSize: SizeConfig.screenWidth / 20.0,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                              IconButton(
+                                icon: const Icon(Icons.search),
+                                color: Colors.grey.shade400,
+                                onPressed: () {},
+                              ),
+                            ],
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Checkbox(
+                              activeColor: secondaryDarkColor,
+                              checkColor: Colors.black,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                              side: MaterialStateBorderSide.resolveWith(
+                                (states) => BorderSide(
+                                    width: 0.5, color: Colors.grey.shade400),
+                              ),
+                              value: isChecked,
+                              onChanged: (bool? value) {
+                                setState(() {
+                                  isChecked = value!;
+                                });
+                              },
+                            ),
+                            Text(
+                              "Hide 0 balances",
+                              style: TextStyle(color: Colors.grey.shade400),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
                     BlocBuilder<CryptoListBloc, CryptoListState>(
                       bloc: _cryptoListBloc,
                       builder: (context, state) {
