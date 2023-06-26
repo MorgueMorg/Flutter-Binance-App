@@ -1,6 +1,6 @@
 import 'package:binance_clone/components/custom_tap_bar.dart';
 import 'package:binance_clone/components/size_config.dart';
-import 'package:binance_clone/features/screens/wallets/components/balance_list.dart';
+import 'package:binance_clone/features/screens/wallets/components/balance_list/balance_list.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {

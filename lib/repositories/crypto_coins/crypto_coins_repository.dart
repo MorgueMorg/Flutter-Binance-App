@@ -19,6 +19,7 @@ class CryptoCoinsRepository implements AbstractCoinsRepository {
       final high24Hours = usdData['HIGH24HOUR'];
       final imageUrl = usdData["IMAGEURL"];
       final lastVolumeTo = usdData["LASTVOLUMETO"];
+      final lastMarket = usdData["LASTMARKET"];
       return CryptoCoin(
         name: e.key,
         priceInUSD: price,
@@ -26,6 +27,7 @@ class CryptoCoinsRepository implements AbstractCoinsRepository {
         high24Hours: high24Hours,
         lastVolumeTo: lastVolumeTo,
         imageUrl: 'https://www.cryptocompare.com/$imageUrl',
+        lastMarket: lastMarket,
       );
     }).toList();
     return cryptoCoinsList;

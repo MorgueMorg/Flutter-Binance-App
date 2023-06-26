@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:binance_clone/components/constants.dart';
 import 'package:binance_clone/features/bloc/crypto_list_bloc/crypto_list_bloc.dart';
-import 'package:binance_clone/features/screens/markets/components/crypto_list/crypto_coin_tile.dart';
+import 'package:binance_clone/features/screens/markets/components/crypto_list/markets_coin_tile.dart';
 import 'package:binance_clone/repositories/crypto_coins/abstract_coins_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -54,7 +54,7 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
                   separatorBuilder: (context, index) => const Divider(),
                   itemBuilder: (context, i) {
                     final coin = state.coinsList[i];
-                    return CryptoCoinTile(coin: coin);
+                    return MarketsCoinTile(coin: coin);
                   },
                 );
               }

@@ -2,8 +2,8 @@ import 'package:binance_clone/components/size_config.dart';
 import 'package:binance_clone/repositories/models/crypto_coin.dart';
 import 'package:flutter/material.dart';
 
-class CryptoCoinTile extends StatelessWidget {
-  const CryptoCoinTile({
+class MarketsCoinTile extends StatelessWidget {
+  const MarketsCoinTile({
     super.key,
     required this.coin,
   });
@@ -86,7 +86,7 @@ class CryptoCoinTile extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4.0),
                     ),
                     child: Text(
-                      // ! Просто для красота и валидации
+                      // ! Просто для красоты и валидации
                       "+${coin.high24Hours}".substring(0, 5),
                       // '+3.33%',
                       style: TextStyle(
