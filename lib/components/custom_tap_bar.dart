@@ -56,6 +56,8 @@ class CustomTapBarState extends State<CustomTapBar>
           router.go('/markets');
         } else if (index == 1) {
           router.go('/wallets');
+        } else if (index == 2) {
+          router.go('/trade');
         }
       },
       isScrollable: true,
@@ -90,7 +92,7 @@ class CustomTapBarState extends State<CustomTapBar>
         SizedBox(
           width: SizeConfig.screenWidth * .15,
           child: const Tab(
-            text: 'Futures',
+            text: 'Trade',
           ),
         ),
         SizedBox(

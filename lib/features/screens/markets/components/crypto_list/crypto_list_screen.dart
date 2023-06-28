@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:binance_clone/components/constants.dart';
+import 'package:binance_clone/components/size_config.dart';
 import 'package:binance_clone/features/bloc/crypto_list_bloc/crypto_list_bloc.dart';
 import 'package:binance_clone/features/screens/markets/components/crypto_list/markets_coin_tile.dart';
 import 'package:binance_clone/features/screens/markets/components/widgets/bottom_tapbar.dart';
@@ -69,18 +70,24 @@ class _CryptoListScreenState extends State<CryptoListScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        SizedBox(height: getProportionateScreenHeight(50)),
                         const Text(
                           "Something went wrong",
+                          style: TextStyle(color: Colors.white),
                         ),
                         const Text(
                           "Please try again later",
+                          style: TextStyle(color: Colors.white),
                         ),
-                        const SizedBox(height: 30),
+                        SizedBox(height: getProportionateScreenHeight(40)),
                         TextButton(
                           onPressed: () {
                             _cryptoListBloc.add(LoadCryptoList());
                           },
-                          child: const Text("Try again"),
+                          child: const Text(
+                            "Try again",
+                            style: TextStyle(color: secondaryDarkColor),
+                          ),
                         )
                       ],
                     ));

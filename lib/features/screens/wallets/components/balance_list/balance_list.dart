@@ -120,14 +120,22 @@ class _BalanceListState extends State<BalanceList> {
                               mainAxisAlignment: MainAxisAlignment.center,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                const Text("Something went wrong"),
-                                const Text("Please try again later"),
+                                const Text(
+                                  "Something went wrong",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                const Text(
+                                  "Please try again later",
+                                  style: TextStyle(color: Colors.white),
+                                ),
                                 const SizedBox(height: 30),
                                 TextButton(
                                   onPressed: () {
                                     _cryptoListBloc.add(LoadCryptoList());
                                   },
-                                  child: const Text("Try again"),
+                                  child: const Text("Try again",
+                                      style:
+                                          TextStyle(color: secondaryDarkColor)),
                                 ),
                               ],
                             ),
