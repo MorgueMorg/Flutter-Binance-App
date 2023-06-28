@@ -1,24 +1,20 @@
 import 'package:binance_clone/components/constants.dart';
 import 'package:flutter/material.dart';
 
-class SearchBarWidget extends StatefulWidget {
+class SearchBarWidget extends StatelessWidget {
+  final ValueChanged<String> onChanged;
+
   const SearchBarWidget({
     Key? key,
+    required this.onChanged,
   }) : super(key: key);
-
-  @override
-  State<SearchBarWidget> createState() => _SearchBarWidgetState();
-}
-
-class _SearchBarWidgetState extends State<SearchBarWidget> {
-  EdgeInsets get searchBarPadding => const EdgeInsets.symmetric(horizontal: 16);
 
   @override
   Widget build(BuildContext context) {
     return PreferredSize(
       preferredSize: const Size(double.infinity, 70.0),
       child: Padding(
-        padding: searchBarPadding,
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: _buildSearchInputField(context),
       ),
     );
@@ -35,6 +31,7 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
         decorationColor: Colors.white,
         height: 1.2,
       ),
+      onChanged: onChanged,
       decoration: buildSearchInputDecoration().copyWith(
         fillColor: primaryLightColor,
         hintText: "Search",
@@ -51,32 +48,33 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
         suffixIcon: IconButton(
           padding: EdgeInsets.zero,
           splashRadius: 15,
-          // onPressed: onCancelTap,
-          onPressed: () {},
+          onPressed: () {
+            onChanged('');
+          },
           icon: const Icon(Icons.cancel_outlined, color: textLightColor),
         ),
         counterText: "",
       ),
     );
   }
-}
 
-InputDecoration buildSearchInputDecoration() {
-  var border = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(20),
-  );
-  return InputDecoration(
-    filled: true,
-    border: border,
-    enabledBorder: border,
-    focusedBorder: border,
-    prefixIconConstraints: const BoxConstraints(
-      maxHeight: 45,
-    ),
-    prefixIcon: IconButton(
-      onPressed: () {},
-      icon: const Icon(Icons.search, color: textLightColor),
-    ),
-    contentPadding: EdgeInsets.zero,
-  );
+  InputDecoration buildSearchInputDecoration() {
+    var border = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(20),
+    );
+    return InputDecoration(
+      filled: true,
+      border: border,
+      enabledBorder: border,
+      focusedBorder: border,
+      prefixIconConstraints: const BoxConstraints(
+        maxHeight: 45,
+      ),
+      prefixIcon: IconButton(
+        onPressed: () {},
+        icon: const Icon(Icons.search, color: textLightColor),
+      ),
+      contentPadding: EdgeInsets.zero,
+    );
+  }
 }
