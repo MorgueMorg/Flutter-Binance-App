@@ -106,9 +106,9 @@ class MarketsCoinTile extends StatelessWidget {
                   child: Center(
                     child: Text(
                       // ! Просто для красоты и валидации
-                      "${"+${coin.high24Hours}".substring(0, 2)},${"${coin.high24Hours}".substring(1, 3).replaceAll(".", "")}",
+                      "${"+${coin.high24Hours}".substring(0, 2)},${"${coin.high24Hours}".substring(1, 3).replaceAll(".", "")}%",
                       style: TextStyle(
-                        fontSize: SizeConfig.screenWidth / 23.0,
+                        fontSize: SizeConfig.screenWidth / 30.0,
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
                       ),

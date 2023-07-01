@@ -1,6 +1,7 @@
 import 'package:binance_clone/components/size_config.dart';
 import 'package:binance_clone/repositories/models/crypto_coin.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class WalletsCoinTile extends StatelessWidget {
   const WalletsCoinTile({
@@ -40,7 +41,9 @@ class WalletsCoinTile extends StatelessWidget {
           fontWeight: FontWeight.w500,
         ),
       ),
-      onTap: () {},
+      onTap: () {
+        GoRouter.of(context).go('/details', extra: coin);
+      },
     );
   }
 }
