@@ -23,6 +23,8 @@ dependencies:
   equatable: ^2.0.5
   # Для иньекции зависимостей
   get_it: ^7.4.1
+  # Решил юзать hive в качестве nosql локал бдшки
+  hive_flutter: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +32,10 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   # Для иконки запуска (Лень было менять нативно)
   flutter_launcher_icons: ^0.13.1
+  # Для кодогенерации адаптера для hive (лень было самому писать)
+  hive_generator: ^2.0.0
+  # Тоже для кодогена
+  build_runner:
 
 # Тоже для иконки запуска (Либа сама подбирает размеры иконки)
 flutter_launcher_icons:
